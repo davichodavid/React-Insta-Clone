@@ -1,0 +1,11 @@
+.nav-bar {
+  display: flex;
+}
+
+img {
+  width: 40%;
+}
+
+.icons {
+  font-size: 200px;
+}
