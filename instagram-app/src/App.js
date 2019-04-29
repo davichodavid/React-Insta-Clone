@@ -3,6 +3,7 @@ import './App.css';
 
 import dummyData from './dummy-data';
 import SearchBar from './components/SearchBar/SearchBar';
+import PostContainer from './components/PostContainer/PostContainer'
 
 
 class App extends React.Component {
@@ -17,6 +18,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <SearchBar />
+        <div>
+          {this.state.dummyData.map((post, index) => {
+            return <PostContainer dummyData={post} key={index} />
+          })}
+        </div>
+
       </div>
     );
   }

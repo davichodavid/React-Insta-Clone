@@ -5,7 +5,7 @@ const SearchBar = () => {
   return (
     <div className="nav-bar">
       <div className="logos">
-        <i class="fab fa-instagram"></i>
+        <i className="fab fa-instagram"></i>
         <img alt="text logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcBUKxm-jPyGj0Hr0Z1J7kHkjc3WMAwUZ68qPY81ij1rY9v6Gl" />
       </div>
 
@@ -14,9 +14,9 @@ const SearchBar = () => {
       </form>
 
       <div className="icons">
-        <i class="far fa-compass"></i>
-        <i class="far fa-heart"></i>
-        <i class="fas fa-user"></i>
+        <i className="far fa-compass"></i>
+        <i className="far fa-heart"></i>
+        <i className="fas fa-user"></i>
       </div>
 
     </div>
