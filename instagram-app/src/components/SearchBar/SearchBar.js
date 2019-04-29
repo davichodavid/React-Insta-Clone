@@ -14,9 +14,9 @@ const SearchBar = () => {
       </form>
 
       <div className="icons">
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-instagram"></i>
+        <i class="far fa-compass"></i>
+        <i class="far fa-heart"></i>
+        <i class="fas fa-user"></i>
       </div>
 
     </div>
