@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import PropTypes from 'prop-types';
+
 
 import dummyData from './dummy-data';
 import SearchBar from './components/SearchBar/SearchBar';
@@ -29,5 +31,13 @@ class App extends React.Component {
   }
 }
 
+PostContainer.propTypes = {
+  thumbnailUrl: PropTypes.string,
+  username: PropTypes.string,
+  imageUrl: PropTypes.string,
+  likes: PropTypes.string,
+  comments: PropTypes.arrayOf(PropTypes.object),
+  timestamp: PropTypes.string
+}
 
 export default App;

@@ -14,7 +14,7 @@ const PostContainer = (props) => {
       <img className="post-img" src={props.dummyData.imageUrl} alt="post" />
       <div className="like-comment">
         <button><i className="far fa-heart"></i></button>
-        <button><i class="far fa-comment"></i></button>
+        <button><i className="far fa-comment"></i></button>
       </div>
       <h1 className="likes">Likes: {props.dummyData.likes}</h1>
       <div className="this-wont-work">
