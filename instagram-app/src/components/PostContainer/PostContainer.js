@@ -18,8 +18,8 @@ const PostContainer = (props) => {
       </div>
       <h1 className="likes">Likes: {props.dummyData.likes}</h1>
       <div className="this-wont-work">
-        {props.dummyData.comments.map(comment => {
-          return <h1>{comment.username}<p>{comment.text}</p></h1>;
+        {props.dummyData.comments.map((comment, index) => {
+          return <h1 key={index}>{comment.username}<p>{comment.text}</p></h1>;
         })}
       </div>
       <p className="time-stamp">{props.dummyData.timestamp}</p>

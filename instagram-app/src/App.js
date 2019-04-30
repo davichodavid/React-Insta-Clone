@@ -32,12 +32,14 @@ class App extends React.Component {
 }
 
 PostContainer.propTypes = {
-  thumbnailUrl: PropTypes.string,
-  username: PropTypes.string,
-  imageUrl: PropTypes.string,
-  likes: PropTypes.string,
-  comments: PropTypes.arrayOf(PropTypes.object),
-  timestamp: PropTypes.string
+  dummyData: PropTypes.shape({
+    thumbnailUrl: PropTypes.string,
+    username: PropTypes.string,
+    imageUrl: PropTypes.string,
+    likes: PropTypes.number,
+    comments: PropTypes.arrayOf(PropTypes.object),
+    timestamp: PropTypes.string
+  })
 }
 
 export default App;
