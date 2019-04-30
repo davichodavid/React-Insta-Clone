@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 
 const dummyData = [
   {
@@ -53,7 +53,7 @@ const dummyData = [
       },
       {
         username: "dennis_futbol",
-        text: "Is"
+        text: "It is"
       }
     ]
   },
