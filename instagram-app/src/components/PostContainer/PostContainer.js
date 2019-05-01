@@ -52,7 +52,7 @@ class PostContainer extends React.Component {
         </div>
         <p className="time-stamp">{this.props.dummyData.timestamp}</p>
 
-        <CommentSection comments={this.props.dummyData.comments} addNewComment={this.addNewComment} handleChanges={this.handleChanges} comment={this.state.comment} />
+        <CommentSection addNewComment={this.addNewComment} handleChanges={this.handleChanges} comment={this.state.comment} />
       </div>
     )
   }
