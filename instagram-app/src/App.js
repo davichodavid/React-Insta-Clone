@@ -12,7 +12,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      dummyData: []
+      dummyData: [],
+      filteredPosts: []
     };
   }
 
@@ -20,10 +21,31 @@ class App extends React.Component {
     this.setState({ dummyData: dummyData })
   }
 
+  //**********************This handle searching and filtering posts ******************************/
+
+  filterPosts = (event) => {
+    event.preventDefault();
+    console.log('this fired');
+    const dummyDataPosts = this.state.dummyData.filter(dummyDataPost => {
+      if (dummyDataPost.username.includes(event.target.value)) {
+        return dummyDataPost;
+      }
+    });
+    this.setState({
+      filteredPosts: dummyDataPosts
+    });
+  };
+
+  handleFilterChanges = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
   render() {
     return (
       <div className="App">
-        <SearchBar />
+        <SearchBar filterPosts={this.filterPosts} filteredPosts={this.state.filteredPosts} handleFilterChanges={this.handleFilterChanges} />
         <div>
           {this.state.dummyData.map((post, index) => {
             return <PostContainer dummyData={post} key={index} />

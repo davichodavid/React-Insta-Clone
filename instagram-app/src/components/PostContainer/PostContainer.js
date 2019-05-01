@@ -8,9 +8,11 @@ class PostContainer extends React.Component {
     super(props);
     this.state = {
       comments: props.dummyData.comments,
-      comment: ''
+      comment: '',
+      likes: props.dummyData.likes,
     }
   }
+  //**********************These handle comment creation ******************************/
 
   addNewComment = event => {
     console.log(this.state.comments)
@@ -28,9 +30,20 @@ class PostContainer extends React.Component {
 
   handleChanges = event => {
     this.setState({
-      comment: event.target.value
+      [event.target.name]: event.target.value
     });
   };
+
+  //**********************These handle adding Likes ******************************/
+
+
+  addLike = event => {
+    console.log("this fired")
+    let likes = this.state.likes + 1;
+    this.setState({
+      likes: likes
+    })
+  }
 
   render() {
     return (
@@ -41,10 +54,10 @@ class PostContainer extends React.Component {
         </div>
         <img className="post-img" src={this.props.dummyData.imageUrl} alt="post" />
         <div className="like-comment">
-          <button><i className="far fa-heart"></i></button>
+          <button onClick={this.addLike}><i className="far fa-heart"></i></button>
           <button><i className="far fa-comment"></i></button>
         </div>
-        <h1 className="likes">Likes: {this.props.dummyData.likes}</h1>
+        <h1 className="likes">Likes: {this.state.likes}</h1>
         <div className="this-wont-work">
           {this.state.comments.map((comment, index) => {
             return <h1 key={index}>{comment.username}<p>{comment.text}</p></h1>;
