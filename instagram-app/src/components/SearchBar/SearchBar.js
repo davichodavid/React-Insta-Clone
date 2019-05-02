@@ -20,7 +20,13 @@ const SearchBar = (props) => {
       </Form>
 
       <Icons>
-        <IconsFA className="far fa-compass"></IconsFA>
+        <IconButton onClick={() => {
+          localStorage.removeItem('username');
+          window.location.reload();
+        }}
+        >
+          Logout
+        </IconButton>
         <IconsFA className="far fa-heart"></IconsFA>
         <IconsFA className="fas fa-user"></IconsFA>
       </Icons>
@@ -57,7 +63,7 @@ const LogosImg = styled.img`
 
 const Icons = styled.div`
   font-size: 1.6rem;
-  width: 13%;
+  width: 16%;
   display: flex;
   justify-content: space-between;
   padding: 0 2%
@@ -76,6 +82,12 @@ const Input = styled.input`
   width: 100%;
   height: 100%;
   border-radius: 3px;
+`;
+
+const IconButton = styled.button`
+  font-size: 1.1rem;
+  background-color: lightblue;
+  border-radius: 4px;
 `;
 
 
