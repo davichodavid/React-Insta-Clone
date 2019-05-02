@@ -1,16 +1,16 @@
 import React from 'react';
 
-const WithAuthenticate = PostPage => LoginPage =>
+const WithAuthenticate = PostPage => Login =>
   class extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        loggedIn: false
+        loggedIn: false,
       };
-    }
+    };
 
     componentDidMount() {
-      if (!localStorage.getItem('user')) {
+      if (!localStorage.getItem('username')) {
         this.setState({ loggedIn: false })
       } else {
         this.setState({ loggedIn: true })
@@ -21,7 +21,7 @@ const WithAuthenticate = PostPage => LoginPage =>
       if (this.state.loggedIn) {
         return <PostPage />;
       } else {
-        return <LoginPage />
+        return <Login />
       }
     }
   }

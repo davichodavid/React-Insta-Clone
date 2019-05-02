@@ -1,7 +1,7 @@
 import React from 'react';
 import './PostContainer.css';
 
-import CommentSection from '../CommentSection/CommentSection'
+import CommentSection from '../CommentSection/CommentSection';
 
 class PostContainer extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class PostContainer extends React.Component {
     this.setState({
       comments: [...this.state.comments,
       {
-        username: 'davichodavid',
+        username: localStorage.getItem('username'),
         text: this.state.comment
       }
       ],
