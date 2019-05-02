@@ -9,13 +9,12 @@ const SearchBar = (props) => {
         <img alt="text logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcBUKxm-jPyGj0Hr0Z1J7kHkjc3WMAwUZ68qPY81ij1rY9v6Gl" />
       </div>
 
-      <form onSubmit={props.filterPosts}>
+      <form>
         <input
-          value={props.filteredPosts}
           type="text"
           name="filteredPosts"
           placeholder="Search"
-          onChange={props.handleFilterChanges}
+          onChange={props.filterPosts}
         >
         </input>
       </form>

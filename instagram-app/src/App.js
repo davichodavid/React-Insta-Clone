@@ -24,30 +24,35 @@ class App extends React.Component {
   //**********************This handle searching and filtering posts ******************************/
 
   filterPosts = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     console.log('this fired');
+    //eslint-disable-next-line
     const dummyDataPosts = this.state.dummyData.filter(dummyDataPost => {
       if (dummyDataPost.username.includes(event.target.value)) {
         return dummyDataPost;
       }
+
     });
     this.setState({
       filteredPosts: dummyDataPosts
     });
+
   };
 
-  handleFilterChanges = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  };
+  // handleFilterChanges = event => {
+  //   this.setState({
+  //     [event.target.name]: event.target.value
+  //   });
+  // };
 
   render() {
     return (
       <div className="App">
         <SearchBar filterPosts={this.filterPosts} filteredPosts={this.state.filteredPosts} handleFilterChanges={this.handleFilterChanges} />
         <div>
-          {this.state.dummyData.map((post, index) => {
+          {this.state.filteredPosts.length <= 0 ? this.state.dummyData.map((post, index) => {
+            return <PostContainer dummyData={post} key={index} />
+          }) : this.state.filteredPosts.map((post, index) => {
             return <PostContainer dummyData={post} key={index} />
           })}
         </div>
