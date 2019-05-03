@@ -1,3 +1,5 @@
+// import React from 'react';
+
 const dummyData = [
   {
     username: "philzcoffee",
@@ -51,7 +53,7 @@ const dummyData = [
       },
       {
         username: "dennis_futbol",
-        text: "Is"
+        text: "It is"
       }
     ]
   },
