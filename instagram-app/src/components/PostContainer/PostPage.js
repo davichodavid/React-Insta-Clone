@@ -50,7 +50,7 @@ class PostPage extends React.Component {
   render() {
     return (
       <WrapperDiv c>
-        <SearchBar filterPosts={this.filterPosts} filteredPosts={this.state.filteredPosts} handleFilterChanges={this.handleFilterChanges} logOut={this.logOut} />
+        <SearchBar filterPosts={this.filterPosts} filteredPosts={this.state.filteredPosts} handleFilterChanges={this.handleFilterChanges} />
         <div>
           {this.state.filteredPosts.length <= 0 ? this.state.dummyData.map((post, index) => {
             return <PostContainer dummyData={post} key={index} />
